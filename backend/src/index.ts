@@ -2,6 +2,8 @@ import bodyParser from "body-parser"
 import express from "express"
 import mysql from 'mysql'
 import { Request, Response } from 'express-serve-static-core';
+require('dotenv').config();
+
 const cors = require('cors')
 const app = express()
 const port = 3000
@@ -10,7 +12,7 @@ app.use(cors())
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'hello',
+    password: process.env.pass,
     database: 'Coding'
   });
   console.log(process.env.PASS)
