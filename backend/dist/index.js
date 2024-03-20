@@ -9,12 +9,13 @@ const mysql_1 = __importDefault(require("mysql"));
 const cors = require('cors');
 const app = (0, express_1.default)();
 const port = 3000;
+require('dotenv').config();
 app.use(body_parser_1.default.json());
 app.use(cors());
 const connection = mysql_1.default.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'hello',
+    password: process.env.pass,
     database: 'Coding'
 });
 console.log(process.env.PASS);
